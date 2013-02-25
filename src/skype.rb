@@ -6,9 +6,7 @@ require 'json'
 require 'redis'
 
 $redis = Redis.new
-$redis
-
-$skype = Skypekit::Skype.new(:keyfile => './keypair.pem')
+$skype = Skypekit::Skype.new keyfile: File.expand_path('../../../../skype.pem', __FILE__)
 
 $skype.start
 $skype.login(ENV['SKYPE_USERNAME'], ENV['SKYPE_PASSWORD'])

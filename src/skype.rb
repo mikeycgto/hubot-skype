@@ -11,7 +11,7 @@ $redis
 $skype = Skypekit::Skype.new(:keyfile => './keypair.pem')
 
 $skype.start
-$skype.login(skype_username, skype_password)
+$skype.login(ENV['SKYPE_USERNAME'], ENV['SKYPE_PASSWORD'])
 
 def terminate
   puts "Terminating"
